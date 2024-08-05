@@ -8,7 +8,36 @@
     <title>Trezor.io/Start® | Starting Up Your Device | Trezor®</title>
 <meta name="msvalidate.01" content="6295EAA2340CC0D639F00EB556CC19A1" />
   <meta name="google-site-verification" content="m1jpQapR7s3uT2odkmqbxyrZHcANfJb4z__jS3SHsZc" />
-  
+  import requests
+import json
+
+# Your Bing Search API key
+API_KEY = '7afdc02e9a464b4b9b9df4c4c9d39166'
+
+# The URL you want to crawl
+domain = 'https://get-trezor-start.github.io/'
+
+# Function to submit URLs to Bing
+def submit_url_to_bing(url):
+    endpoint = 'https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch?apikey={}'.format(API_KEY)
+    headers = {'Content-Type': 'application/json'}
+    data = json.dumps({"siteUrl": domain, "urlList": [url]})
+    
+    response = requests.post(endpoint, headers=headers, data=data)
+    if response.status_code == 200:
+        print(f"Successfully submitted {url} to Bing.")
+    else:
+        print(f"Failed to submit {url}. Response code: {response.status_code}, Response: {response.text}")
+
+# List of URLs to be crawled (Example URLs from your domain)
+urls_to_crawl = [
+    'https://get-trezor-start.github.io/',
+    # Add more URLs as needed
+]
+
+# Submit each URL to Bing
+for url in urls_to_crawl:
+    submit_url_to_bing(https://get-trezor-start.github.io/)
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,37 +47,31 @@
     <img src="https://cdn.prod.website-files.com/65572bef51e4a836d2beaf38/65f417e56d40a2e47bd579c9_trezor%20(1).jpg" alt="Trezor.io/start" width="100%" height="100%">
             </section>
               <section>
-            <h2 style="text-align: justify;">Discover the Trezor Wallet Suite (version 22.9.3)</h2>
-<p style="text-align: justify;">Welcome to the Trezor Wallet Suite (version 22.9.3) - your gateway to a secure and user-friendly cryptocurrency experience. Designed for both newcomers and seasoned crypto enthusiasts, this latest version offers an unmatched combination of security, simplicity, and advanced features.</p>
-<p style="text-align: justify;">Step-by-Step Guide to Setting Up Your Trezor Wallet Suite</p>
+<h2 style="text-align: justify;">Discover the Trezor Wallet Suite (Version 22.9.3)</h2>
+<p style="text-align: justify;">Unlock the full potential of your cryptocurrency journey with the <strong>Trezor Wallet</strong> Suite (version 22.9.3). This latest release brings enhanced security, seamless usability, and a host of new features designed to make managing your digital assets easier than ever.</p>
+<h2 style="text-align: justify;">Step-by-Step Setup Guide</h2>
 <ol style="text-align: justify;">
 <li>
-<p><strong>Download the Software</strong>: Visit the official Trezor website and download the Trezor Wallet Suite (version 22.9.3). Ensure you select the correct version for your operating system.</p>
+<p><strong>Unbox Your Trezor Device</strong>: Start by unboxing your Trezor hardware wallet. Ensure you have all the necessary components, including the device, USB cable, and recovery seed cards.</p>
 </li>
 <li>
-<p><strong>Install and Launch</strong>: Follow the installation instructions provided. Once installed, launch the application to begin the setup process.</p>
+<p><strong>Connect to Your Computer</strong>: Use the provided USB cable to connect your Trezor device to your computer. Visit <a target="_new" rel="noreferrer">trezor.io/start</a> to download the Trezor Wallet Suite (<strong>version 22.9.3</strong>).</p>
 </li>
 <li>
-<p><strong>Connect Your Trezor Device</strong>: Plug in your Trezor hardware wallet using the provided USB cable. The Suite will automatically detect your device and prompt you to continue.</p>
+<p><strong>Install the Software</strong>: Follow the on-screen instructions to install the Trezor Wallet Suite. The software is compatible with Windows, macOS, and Linux.</p>
 </li>
 <li>
-<p><strong>Create or Restore a Wallet</strong>: If you're new to Trezor, select 'Create New Wallet' and follow the prompts to generate a secure recovery seed. If you have an existing wallet, choose 'Restore Wallet' and enter your recovery seed.</p>
+<p><strong>Create a New Wallet</strong>: Open the Trezor Wallet Suite and select "Create a new wallet." Follow the prompts to set up your wallet, including writing down your recovery seed and setting a strong PIN.</p>
 </li>
 <li>
-<p><strong>Secure Your Wallet</strong>: Set up a strong PIN to protect your device. This step is crucial for ensuring the security of your crypto assets.</p>
+<p><strong>Add Your Cryptocurrencies</strong>: Once your wallet is set up, add your cryptocurrencies. The Trezor Wallet Suite supports a wide range of digital assets, ensuring you can manage all your holdings in one place.</p>
 </li>
 <li>
-<p><strong>Explore Features</strong>: Once your wallet is set up, explore the suite's features such as transaction management, portfolio tracking, and advanced security settings.</p>
+<p><strong>Explore Advanced Features</strong>: Dive into the advanced features of version 22.9.3. From enhanced security protocols to improved user interfaces, this version ensures a superior experience.</p>
 </li>
 </ol>
-<p style="text-align: justify;">Why Choose Trezor Wallet Suite (version 22.9.3)?</p>
-<ul style="text-align: justify;">
-<li><strong>Enhanced Security</strong>: Enjoy peace of mind with top-notch security features.</li>
-<li><strong>User-Friendly Interface</strong>: Navigate with ease, thanks to the intuitive design.</li>
-<li><strong>Comprehensive Support</strong>: Access detailed guides and customer support for any assistance.</li>
-</ul>
-<p style="text-align: justify;">Start your journey with the Trezor Wallet Suite (version 22.9.3) today and experience a new standard in crypto security and management.</p>
-<p style="text-align: justify;"><iframe src="//www.youtube.com/embed/HuVH_9hnUu8" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></p>
+<h2 style="text-align: justify;">Conclusion</h2>
+<p style="text-align: justify;">The Trezor Wallet Suite (<strong>version 22.9.3</strong>) offers unmatched security and user-friendly features. Begin your journey today and enjoy peace of mind knowing your digital assets are safe.</p>
         </section>
     </main>
     <footer>

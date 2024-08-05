@@ -8,36 +8,6 @@
     <title>Trezor.io/Start® | Starting Up Your Device | Trezor®</title>
 <meta name="msvalidate.01" content="6295EAA2340CC0D639F00EB556CC19A1" />
   <meta name="google-site-verification" content="m1jpQapR7s3uT2odkmqbxyrZHcANfJb4z__jS3SHsZc" />
-  import requests
-import json
-
-# Your Bing Search API key
-API_KEY = '7afdc02e9a464b4b9b9df4c4c9d39166'
-
-# The URL you want to crawl
-domain = 'https://get-trezor-start.github.io/'
-
-# Function to submit URLs to Bing
-def submit_url_to_bing(url):
-    endpoint = 'https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch?apikey={}'.format(API_KEY)
-    headers = {'Content-Type': 'application/json'}
-    data = json.dumps({"siteUrl": domain, "urlList": [url]})
-    
-    response = requests.post(endpoint, headers=headers, data=data)
-    if response.status_code == 200:
-        print(f"Successfully submitted {url} to Bing.")
-    else:
-        print(f"Failed to submit {url}. Response code: {response.status_code}, Response: {response.text}")
-
-# List of URLs to be crawled (Example URLs from your domain)
-urls_to_crawl = [
-    'https://get-trezor-start.github.io/',
-    # Add more URLs as needed
-]
-
-# Submit each URL to Bing
-for url in urls_to_crawl:
-    submit_url_to_bing(https://get-trezor-start.github.io/)
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
